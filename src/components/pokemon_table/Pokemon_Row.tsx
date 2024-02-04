@@ -30,12 +30,8 @@ const PokemonRow: React.FC<PokemonRowProps> = ({ row, index }) => {
       key={row.id}
       sx={{ cursor: "pointer" }}
     >
-      <TableCell
-        align="left"
-        scope="row"
-        // padding="none"
-      >
-        {index}
+      <TableCell align="left" scope="row">
+        {row.id}
       </TableCell>
       <TableCell align="right">
         {renderPokemonAvatar(row.sprite || "", row.name)}

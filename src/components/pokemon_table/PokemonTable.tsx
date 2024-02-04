@@ -167,19 +167,27 @@ const PokemonTable = React.forwardRef((props, ref) => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
           alignItems: "center",
           paddingLeft: "10px",
         }}
       >
         <Tooltip title="Filter list">
-          <IconButton onClick={() => toggleModal(true)} sx={{ height: "40px" }}>
-            <IoFilter />
-          </IconButton>
+          <React.Fragment>
+            <Typography variant="caption" color="textSecondary">
+              Click the filter icon to search by type
+            </Typography>
+            <IconButton
+              onClick={() => toggleModal(true)}
+              sx={{ height: "40px" }}
+            >
+              <IoFilter />
+            </IconButton>
+          </React.Fragment>
         </Tooltip>
         <TablePagination
           rowsPerPageOptions={[5, 10]}
           component="div"
+          sx={{ flexGrow: 1 }}
           count={data.total}
           rowsPerPage={rowsPerPage}
           page={currentPage}
